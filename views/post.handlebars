@@ -1,0 +1,29 @@
+<div class="postContainer">
+	<div class="postContainer__header">
+		<h2 class="postContainer__title">{{post.title}}</h2>
+		<p class="postContainer__date">Posted by {{post.username}} on {{post.createdAt}}</p>
+	</div>
+	<p class="postContainer__post">{{post.content}}</p>
+</div>
+{{#if post.comments.length}}
+	{{#each post.comments}}
+		<div class="commentContainer">
+			<div class="commentContainer__header"></div>
+			<div class="commentContainer__contentContainer">
+				<p class="commentContainer__content">{{content}}</p>
+				<p class="commentContainer__authorDate">-{{username}}, {{createdAt}}</p>
+			</div>
+		</div>
+	{{/each}}
+{{else}}
+	<div class="commentInputContainer">
+		<div class="commentInputContainer__header"></div>
+		<form action="/post/{{post.id}}/comment" method="POST" class="commentInputContainer__form">
+			<label class="commentInputContainer__label">
+				Comment
+				<textarea name="content" class="commentInputContainer__textarea"></textarea>
+			</label>
+			<button type="submit" class="commentInputContainer__submit">Submit</button>
+		</form>
+	</div>
+{{/if}}

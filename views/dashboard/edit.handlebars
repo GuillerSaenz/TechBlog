@@ -1,0 +1,15 @@
+<div class="formContainer">
+	<p class="formContainer__title">Edit Post</p>
+	<form action="/dashboard/edit/{{post.id}}" method="POST" class="form">
+		<label class="form__label">
+			Title
+			<input name="title" type="text" value="{{post.title}}" class="form__input" />
+		</label>
+		<label class="form__label">
+			Content
+			<textarea rows="2" name="content" class="form__textarea">{{post.content}}</textarea>
+		</label>
+		<button class="form__submit">Update Post</button>
+	</form>
+</div>
+<button class="form__submit" onclick="deletePost({{post.id}})">Delete</button>

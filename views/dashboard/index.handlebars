@@ -1,0 +1,10 @@
+{{#each posts}}
+	<a href="/dashboard/edit/{{id}}" class="dashboardPostContainer">
+		<h2 class="dashboardPostContainer__title">{{title}}</h2>
+		<p class="dashboardPostContainer__date">{{createdAt}}</p>
+	</a>
+{{/each}}
+
+<div class="dashboard__newButtonContainer">
+	<a href="/dashboard/new" class="dashboard__newButton">+ New Post</a>
+</div>
